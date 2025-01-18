@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", serif;
+    font-family: "Poppins", sans-serif;
     color: white;
     font-weight: 600;
 }
@@ -112,11 +112,13 @@ body::before {
     display: flex;
     justify-content: space-between; 
     align-items: center;
+    padding-bottom: 30px;
 }
 
 .weather-summary-img{
-    width: 120px;
+    width: 25%;
     height: 120px;
+    height: auto;
 }
 .weather-summary-info{
     text-align: end;
@@ -140,8 +142,9 @@ body::before {
 .forecast-items-container{
     display: flex;
     gap: 15px;
-    overflow: scroll;
-    padding-bottom: 12px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 20px;
 }
 .forecast-items-container::-webkit-scrollbar {
     height: 8px;
@@ -170,6 +173,8 @@ body::before {
 
 .forecast-item:hover {
     background: rgb(255, 255, 255, 0.15);
+    transform: scale(1.05); /* Slight scaling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .forecast-item-img {
     width: 35px;
@@ -192,3 +197,13 @@ body::before {
 
 }
 /* END SECTION: MESSAGE */
+
+@media (max-width: 768px) {
+    .main-container {
+        width: 90%; /* Adjust to fit smaller screens */
+    }
+    .weather-summary-img {
+        width: 80px;
+        height: 80px;
+    }
+}
