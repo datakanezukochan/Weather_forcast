@@ -41,7 +41,7 @@ async function getFetchData(endPoint, city) {
         if (!response.ok) {
             return { status: response.status }; // Return status for error handling.
         }
-
+        // console.log(response.json())
         return response.json();
     } catch (error) {
         console.error('Error fetching data:', error);
